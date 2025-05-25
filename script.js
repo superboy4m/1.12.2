@@ -1504,7 +1504,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(feedback => displayFeedback(feedback))
             .catch(err => {
                 console.error('Ошибка загрузки отзывов:', err);
-                dom.feedbackDisplay.textContent = 'Ошибка загрузки комментариев.';
+                dom.feedbackDisplay.textContent = 'Ошибка загрузки комментариев';
             });
     };
 
@@ -1518,7 +1518,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>`;
         }).join('');
 
-        dom.feedbackDisplay.innerHTML = feedbackItems || 'Пока нет комментариев.';
+        dom.feedbackDisplay.innerHTML = feedbackItems || 'Пока нет комментариев';
     };
 
     const logout = () => {
@@ -1762,11 +1762,11 @@ document.addEventListener('DOMContentLoaded', () => {
     dom.feedbackForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         const text = dom.feedbackText.value;
-        if (!text) return alert('Введите комментарий.');
-        if (text.length > 256) return alert('Длина до 256.');
+        if (!text) return alert('Введите комментарий... Длинна не должна превышать 256 символов');
+        if (text.length > 256) return alert('Длинна не должна превышать 256 символов');
 
         const token = localStorage.getItem('token');
-        if (!token) return alert('Авторизуйтесь.');
+        if (!token) return alert('Вам нужно авторизоваться');
 
         try {
             const resp = await fetch('/feedback', {
@@ -1796,7 +1796,7 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         const email = document.getElementById('login-email').value;
         const password = document.getElementById('login-password').value;
-        if (!email || !password) return showMessage(dom.loginMsg, 'error', 'Заполните все поля.');
+        if (!email || !password) return showMessage(dom.loginMsg, 'error', 'Заполните все поля');
 
         try {
             const resp = await fetch('/login', {
@@ -1808,7 +1808,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const data = await resp.json();
 
             if (data.message === 'Login successful.') {
-                showMessage(dom.loginMsg, 'success', 'Вы успешно вошли');
+                showMessage(dom.loginMsg, 'success', 'Вы успешно вошли!');
                 localStorage.setItem('token', data.token);
                 displayUserGreeting(data.username);
                 dom.loginContainer.classList.add('hidden');
@@ -1830,9 +1830,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const confirmPassword = document.getElementById('register-confirm').value;
 
         if (!username || !email || !password || !confirmPassword)
-            return showMessage(dom.registerMsg, 'error', 'Заполните все поля.');
-        if (username.includes(' ')) return showMessage(dom.registerMsg, 'error', 'Имя без пробелов.');
-        if (password !== confirmPassword) return showMessage(dom.registerMsg, 'error', 'Пароли не совпадают.');
+            return showMessage(dom.registerMsg, 'error', 'Заполните все поля');
+        if (username.includes(' ')) return showMessage(dom.registerMsg, 'error', 'Имя не должно содержать пробелов');
+        if (password !== confirmPassword) return showMessage(dom.registerMsg, 'error', 'Пароли не совпадают');
 
         try {
             const resp = await fetch('/register', {
