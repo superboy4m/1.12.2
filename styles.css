@@ -1,0 +1,472 @@
+/* --- Общие стили --- */
+:root {
+    --primary-color: #007bff; /* More vibrant blue */
+    --secondary-color: #28a745; /* More vibrant green */
+    --text-color: #212529; /* Darker text for better contrast */
+    --light-text-color: #6c757d; /* Slightly darker light text */
+    --bg-color: #e9ecef; /* Lighter background */
+    --white: #fff;
+    --border-color: #ced4da; /* Lighter border */
+    --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); /* Stronger shadow */
+    --border-radius: 0.25rem; /* Slightly rounded corners */
+    --transition: all 0.3s ease-in-out;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: var(--bg-color);
+    font-family: 'Roboto', sans-serif; /* Use Roboto font */
+}
+
+.container {
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    width: 95%; /* Increased width */
+    max-width: 1400px; /* Increased max-width */
+    padding: 40px; /* Increased padding */
+    text-align: center;
+    position: relative;
+}
+
+h1, h2, h3 {
+    color: var(--text-color);
+    font-weight: 700; /* Bold font */
+    margin-bottom: 1rem; /* Added margin */
+}
+
+/* --- Секции --- */
+.section {
+    padding: 30px; /* Increased padding */
+    border: 1px solid var(--border-color);
+    margin-top: 30px; /* Increased margin */
+    border-radius: var(--border-radius);
+    display: none;
+    background-color: #f8f9fa; /* Light section background */
+}
+
+.section.active {
+    display: block;
+}
+
+/* --- Навигация --- */
+nav {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px; /* Increased margin */
+}
+
+.section-btn {
+    background-color: var(--light-text-color); /* Changed default color */
+    color: var(--white); /* White text for better contrast */
+    border: none; /* Removed border */
+    padding: 12px 25px; /* Increased padding */
+    margin: 0 8px; /* Increased margin */
+    cursor: pointer;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    font-size: 1rem; /* Consistent font size */
+}
+
+.section-btn:hover {
+    background-color: #5a6268; /* Darker on hover */
+}
+
+.section-btn.active {
+    background-color: var(--primary-color); /* Primary color for active button */
+    color: var(--white);
+}
+
+/* --- Авторизация --- */
+.auth-btns {
+    display: flex;
+    justify-content: center; /* Centered buttons */
+    gap: 20px; /* Added gap */
+    margin-bottom: 20px;
+}
+
+.logout-btn {
+    float: none; /* Removed float */
+    margin-top: 20px; /* Added margin */
+}
+
+/* --- Формы --- */
+.form-container {
+    margin-top: 30px; /* Increased margin */
+    border: 1px solid var(--border-color);
+    padding: 30px; /* Increased padding */
+    border-radius: var(--border-radius);
+    background-color: var(--white); /* White background for forms */
+}
+
+.form-group {
+    margin-bottom: 20px; /* Increased margin */
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px; /* Increased margin */
+    color: var(--text-color); /* Darker label text */
+    font-weight: 500; /* Medium font weight */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+    width: 100%;
+    padding: 12px; /* Increased padding */
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-size: 1rem; /* Consistent font size */
+    box-sizing: border-box;
+}
+
+/* --- Кнопки --- */
+.btn {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 12px 25px; /* Increased padding */
+    font-size: 1rem; /* Consistent font size */
+    cursor: pointer;
+    transition: var(--transition);
+    text-transform: uppercase; /* Uppercase text */
+    font-weight: 700; /* Bold font */
+}
+
+.btn:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+/* --- Сообщения --- */
+.message {
+    margin-top: 15px; /* Increased margin */
+    padding: 12px; /* Increased padding */
+    border-radius: var(--border-radius);
+    font-size: 0.9rem; /* Slightly smaller font size */
+    text-align: left;
+}
+
+.message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+/* --- Карта --- */
+#map-section h2 {
+    margin-bottom: 15px; /* Increased margin */
+}
+
+#map-section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 15px; /* Increased margin */
+    box-shadow: var(--box-shadow); /* Added shadow to map */
+}
+
+#map-section input[type="range"] {
+    width: 100%;
+    margin-top: 20px; /* Increased margin */
+}
+
+/* --- События --- */
+.event-container {
+    margin-top: 30px; /* Increased margin */
+    padding: 20px; /* Increased padding */
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    text-align: left;
+}
+
+.event-container h3 {
+    margin-bottom: 15px; /* Increased margin */
+    color: var(--text-color);
+}
+
+.event-container ul {
+    list-style-type: disc;
+    margin-left: 25px; /* Increased margin */
+}
+
+.event-container li {
+    margin-bottom: 8px; /* Increased margin */
+    line-height: 1.5; /* Increased line height */
+}
+
+/* --- Скрытый элемент --- */
+.hidden {
+    display: none;
+}
+
+/* --- Кнопки карты --- */
+.map-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Increased gap */
+    margin-top: 20px; /* Increased margin */
+    flex-wrap: wrap; /* Allow wrapping */
+}
+
+.map-buttons .btn {
+    padding: 10px 20px; /* Adjusted padding for map buttons */
+}
+
+
+/* --- Ссылки --- */
+a {
+    color: var(--primary-color);
+    text-decoration: none; /* Removed underline */
+    font-weight: 500; /* Medium font weight */
+}
+
+a:hover {
+    color: #0056b3; /* Darker blue on hover */
+    text-decoration: underline; /* Add underline on hover */
+}
+
+/* --- Приветствие пользователя --- */
+#user-greeting {
+    margin-bottom: 20px;
+    font-size: 1.1rem; /* Slightly larger font size */
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+/* --- Комментарии --- */
+.feedback-item {
+    background-color: #e9ecef; /* Light background for comments */
+    padding: 15px; /* Increased padding */
+    margin-bottom: 15px; /* Increased margin */
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    text-align: left;
+}
+
+.feedback-username {
+    font-weight: 700; /* Bold username */
+    color: var(--primary-color);
+    margin-bottom: 5px; /* Added margin */
+}
+
+.feedback-text {
+    color: var(--text-color);
+    line-height: 1.5; /* Increased line height */
+}
+
+#feedback-display {
+    margin-top: 20px; /* Added margin */
+}
+
+/* --- Модальные окна --- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000; /* Increased z-index */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6); /* Darker overlay */
+    animation: fadeIn 0.3s ease-in-out; /* Added fade-in animation */
+}
+
+.modal-content {
+    background-color: var(--white);
+    margin: 10% auto; /* Adjusted margin */
+    padding: 30px; /* Increased padding */
+    border: 1px solid #888;
+    width: 90%; /* Increased width */
+    max-width: 700px; /* Added max-width */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: var(--box-shadow); /* Added shadow */
+    animation: slideInFromTop 0.3s ease-in-out; /* Added slide-in animation */
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 32px; /* Increased font size */
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #333; /* Darker on hover */
+    text-decoration: none;
+}
+
+/* --- Animations --- */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInFromTop {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* --- Legend --- */
+.legend {
+    margin-top: 30px;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background-color: #f8f9fa;
+    text-align: left;
+}
+
+.legend h3 {
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+#legend-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px; /* Добавляет отступ между элементами, создавая столбик */
+}
+
+.color-box {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-right: 5px; /* Отступ между квадратом и текстом */
+    border: 1px solid #000; /* Опционально */
+}
+
+/* Стили для элементов карты и маркеров */
+.map-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+#map-image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+#map-markers {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Добавляем overflow: visible, чтобы метки могли выходить за границы контейнера */
+    overflow: visible;
+}
+
+.map-marker {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: red;
+    cursor: pointer;
+    z-index: 10;
+    /* Используем translate для более точного центрирования и избежания проблем с margin */
+    transform: translate(-50%, -50%);
+
+    /* Добавляем стили для метки в центре */
+    border: 2px solid white; /* Добавляем белую границу */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Добавляем тень */
+    transition: all 0.2s ease-in-out; /* Плавное изменение при наведении */
+
+    /* Центрируем метку абсолютно в контейнере карты */
+    top: 50%;
+    left: 50%;
+    opacity: 0.7; /*Прозрачность*/
+}
+
+.map-marker:hover {
+    transform: translate(-50%, -50%) scale(1.2); /* Увеличиваем при наведении */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7); /* Усиливаем тень при наведении */
+}
+
+/* Стили для модального окна с информацией о метке */
+#marker-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+#marker-modal .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+#marker-modal .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#marker-modal .close:hover,
+#marker-modal .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#marker-info {
+    position: absolute;
+    top: 10px; /* Adjust the distance from the top as needed */
+    left: 10px; /* Adjust the distance from the left as needed */
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 100; /* Ensure it's above other elements */
+    width: 200px; /* Adjust the width as needed */
+    text-align: left;
+}
+
+#marker-info h2 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    color: var(--primary-color);
+}
+
+#marker-info p {
+    font-size: 0.9em;
+    line-height: 1.4;
+    color: var(--text-color);
+}

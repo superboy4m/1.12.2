@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Историческая карта</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Добро пожаловать</h1>
+
+        <div class="site-description">
+            <p>На данном сайте вы можете узнать об истории России и мира в период с 1900 по 2000 год. Используйте интерактивную карту, чтобы увидеть территориальные изменения, а также узнать о важных внутренних и мировых событиях. Авторизуйтесь, чтобы оставлять комментарии и делиться своим мнением.</p>
+        </div>
+
+        <nav>
+            <button class="section-btn" data-section="auth-comments">Авторизация и Комментарии</button>
+            <button class="section-btn active" data-section="map">Карта и События</button>
+        </nav>
+
+        <section id="auth-comments-section" class="section hidden">
+            <div id="user-greeting"></div>
+            <div class="auth-btns">
+                <button id="open-login" class="btn">Вход</button>
+                <button id="open-register" class="btn">Регистрация</button>
+            </div>
+            <button id="logout-btn" class="btn hidden">Выйти</button>
+
+            <div id="login-form" class="form-container hidden">
+                <div class="header">
+                    <h2>Вход</h2>
+                </div>
+                <form id="login">
+                    <div class="form-group">
+                        <label for="login-email">Email</label>
+                        <input type="email" id="login-email" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Пароль</label>
+                        <input type="password" id="login-password" placeholder="Пароль">
+                    </div>
+                    <button type="submit" class="btn">Войти</button>
+                    <div id="login-msg" class="message"></div>
+                </form>
+            </div>
+
+            <div id="register-form" class="form-container hidden">
+                <div class="header">
+                    <h2>Регистрация</h2>
+                  </div>
+                  <form id="register">
+                      <div class="form-group">
+                          <label for="register-username">Имя</label>
+                          <input type="text" id="register-username" placeholder="Имя">
+                      </div>
+                      <div class="form-group">
+                          <label for="register-email">Email</label>
+                          <input type="email" id="register-email" placeholder="Email">
+                      </div>
+                      <div class="form-group">
+                          <label for="register-password">Пароль</label>
+                          <input type="password" id="register-password" placeholder="Пароль">
+                      </div>
+                      <div class="form-group">
+                          <label for="register-confirm">Повтор пароля</label>
+                          <input type="password" id="register-confirm" placeholder="Повтор">
+                      </div>
+                      <button type="submit" class="btn">Регистрация</button>
+                      <div id="register-msg" class="message"></div>
+                  </form>
+              </div>
+
+              <div id="feedback-container">
+                  <hr>
+                  <div id="feedback-form-container" class="hidden">
+                      <h2>Оставить комментарий</h2>
+                      <form id="feedback-form">
+                          <textarea id="feedback-text" placeholder="Ваш комментарий" rows="4" cols="50"></textarea>
+                          <button type="submit" class="btn">Отправить</button>
+                      </form>
+                  </div>
+                  <h2>Комментарии</h2>
+                  <div id="feedback-display"></div>
+              </div>
+          </section>
+
+          <section id="map-section" class="section active">
+              <h2>Карта <span id="selected-year">1900</span> года</h2>
+              <div class="map-container">
+                  <img id="map-image" src="Карты/1900-1904.png" alt="Карта России">
+                  <div id="map-markers"></div>  <!-- Контейнер для меток -->
+
+                  <!-- Modal for marker information -->
+                  <div id="marker-modal" class="modal">
+                      <div class="modal-content">
+                          <span class="close-button" id="close-marker-modal">&times;</span>
+                          <h2>Информация о точке</h2>
+                          <p id="marker-modal-description"></p>
+                      </div>
+                  </div>
+              </div>
+
+              <input type="range" id="year-slider" min="1900" max="2000" value="1900">
+              <div class="map-buttons">
+                  <button id="open-about" class="btn">О карте</button>
+                  <button id="open-internal-events" class="btn">Внутренние события</button>
+                  <button id="open-world-events" class="btn">Мировые события</button>
+              </div>
+
+            <div class="legend">
+                <h3>Условные обозначения</h3>
+                <div id="static-legend-items">
+                    <div class="legend-item">
+                        <span class="color-box" style="background-color: green;"></span>
+                        Российская империя/Белое движение (1917-1923)/Российская Федерация (с 1991 года)
+                    </div>
+                    <div class="legend-item">
+                        <span class="color-box" style="background-color: lightgreen;"></span>
+                        Вассалы Российской империи
+                    </div>
+                    <div class="legend-item">
+                      <span class="color-box" style="background-color: greenyellow"></span>
+                                                Территории под контролем зелёноармейцев
+                                            </div>
+                                            <div class="legend-item">
+                                                <span class="color-box" style="background-color: burlywood"></span>
+                                                Утерянные территории
+                                            </div>
+                                            <div class="legend-item">
+                                                <span class="color-box" style="background-color: lightskyblue"></span>
+                                                Новые территории
+                                            </div>
+                                            <div class="legend-item">
+                                              <span class="color-box" style="background-color: red"></span>
+                                              РСФСР/СССР (с 1922 года)
+                                          </div>
+                                          <div class="legend-item">
+                                              <span class="color-box" style="background-color: yellow;"></span>
+                                              Арендованные территории
+                                          </div>
+                                          <div class="legend-item">
+                                            <span class="color-box" style="background-color: purple;"></span>
+                                            Территории под оккупационным режимом
+                                        </div>
+                                      </div>
+                                      <div id="dynamic-legend-items">
+                                      </div>
+                                  </div>
+
+                                  <div id="about-modal" class="modal">
+                                      <div class="modal-content">
+                                          <span class="close-button" id="close-about">&times;</span>
+                                          <h2>О карте</h2>
+                                          <p>Информация о карте будет здесь.</p>
+                                      </div>
+                                  </div>
+
+                                  <div id="internal-events-modal" class="modal">
+                                      <div class="modal-content">
+                                          <span class="close-button" id="close-internal-events">&times;</span>
+                                          <h2>Внутренние события</h2>
+                                          <ul id="internal-events-list"></ul>
+                                      </div>
+                                  </div>
+
+                                  <div id="world-events-modal" class="modal">
+                                      <div class="modal-content">
+                                          <span class="close-button" id="close-world-events">&times;</span>
+                                          <h2>Мировые события</h2>
+                                          <ul id="world-events-list"></ul>
+                                      </div>
+                                  </div>
+                              </section>
+                          </div>
+                          <script src="script.js"></script>
+                      </body>
+                      </html>
