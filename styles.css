@@ -1,14 +1,14 @@
 /* --- Общие стили --- */
 :root {
-    --primary-color: #007bff; /* More vibrant blue */
-    --secondary-color: #28a745; /* More vibrant green */
-    --text-color: #212529; /* Darker text for better contrast */
-    --light-text-color: #6c757d; /* Slightly darker light text */
-    --bg-color: #e9ecef; /* Lighter background */
+    --primary-color: #007bff; /* Более яркий синий */
+    --secondary-color: #28a745; /* Более яркий зелёный */
+    --text-color: #212529; /* Более тёмный текст для лучшего контраста */
+    --light-text-color: #6c757d; /* Слегка затемнённый светлый текст */
+    --bg-color: #e9ecef; /* Более светлый фон */
     --white: #fff;
-    --border-color: #ced4da; /* Lighter border */
-    --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); /* Stronger shadow */
-    --border-radius: 0.25rem; /* Slightly rounded corners */
+    --border-color: #ced4da; /* Более светлая граница */
+    --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); /* Более выраженная тень */
+    --border-radius: 0.25rem; /* Слегка скруглённые углы */
     --transition: all 0.3s ease-in-out;
 }
 
@@ -20,100 +20,100 @@ body {
     min-height: 100vh;
     margin: 0;
     background-color: var(--bg-color);
-    font-family: 'Roboto', sans-serif; /* Use Roboto font */
+    font-family: 'Roboto', sans-serif;
 }
 
 .container {
     background-color: var(--white);
     border-radius: 10px;
     box-shadow: var(--box-shadow);
-    width: 95%; /* Increased width */
-    max-width: 1400px; /* Increased max-width */
-    padding: 40px; /* Increased padding */
+    width: 95%; /* Увеличенная ширина */
+    max-width: 1400px; /* Увеличенная максимальная ширина */
+    padding: 40px; /* Увеличенный внутренний отступ */
     text-align: center;
     position: relative;
 }
 
 h1, h2, h3 {
     color: var(--text-color);
-    font-weight: 700; /* Bold font */
-    margin-bottom: 1rem; /* Added margin */
+    font-weight: 700; /* Жирный шрифт */
+    margin-bottom: 1rem; /* Добавлен отступ */
 }
 
-/* --- Секции --- */
+/* Секции */
 .section {
-    padding: 30px; /* Increased padding */
+    padding: 30px; /* Увеличенный внутренний отступ */
     border: 1px solid var(--border-color);
-    margin-top: 30px; /* Increased margin */
+    margin-top: 30px; /* Увеличенный внешний отступ */
     border-radius: var(--border-radius);
     display: none;
-    background-color: #f8f9fa; /* Light section background */
+    background-color: #f8f9fa; /* Светлый фон секции */
 }
 
 .section.active {
     display: block;
 }
 
-/* --- Навигация --- */
+/* Навигация */
 nav {
     display: flex;
     justify-content: center;
-    margin-bottom: 30px; /* Increased margin */
+    margin-bottom: 30px; /* Увеличенный внешний отступ */
 }
 
 .section-btn {
-    background-color: var(--light-text-color); /* Changed default color */
-    color: var(--white); /* White text for better contrast */
-    border: none; /* Removed border */
-    padding: 12px 25px; /* Increased padding */
-    margin: 0 8px; /* Increased margin */
+    background-color: var(--light-text-color); /* Изменён цвет по умолчанию */
+    color: var(--white); /* Белый текст для лучшего контраста */
+    border: none; /* Удалена граница */
+    padding: 12px 25px; /* Увеличенный внутренний отступ */
+    margin: 0 8px; /* Увеличенный внешний отступ */
     cursor: pointer;
     border-radius: var(--border-radius);
     transition: var(--transition);
-    font-size: 1rem; /* Consistent font size */
+    font-size: 1rem; /* Единый размер шрифта */
 }
 
 .section-btn:hover {
-    background-color: #5a6268; /* Darker on hover */
+    background-color: #5a6268; /* Темнее при наведении */
 }
 
 .section-btn.active {
-    background-color: var(--primary-color); /* Primary color for active button */
+    background-color: var(--primary-color); /* Основной цвет для активной кнопки */
     color: var(--white);
 }
 
-/* --- Авторизация --- */
+/* Авторизация */
 .auth-btns {
     display: flex;
-    justify-content: center; /* Centered buttons */
-    gap: 20px; /* Added gap */
+    justify-content: center; /* Кнопки по центру */
+    gap: 20px; /* Добавлен промежуток */
     margin-bottom: 20px;
 }
 
 .logout-btn {
-    float: none; /* Removed float */
-    margin-top: 20px; /* Added margin */
+    float: none; /* Удалено всплытие (float) */
+    margin-top: 20px; /* Добавлен отступ */
 }
 
-/* --- Формы --- */
+/* Формы */
 .form-container {
-    margin-top: 30px; /* Increased margin */
+    margin-top: 30px; /* Увеличенный внешний отступ */
     border: 1px solid var(--border-color);
-    padding: 30px; /* Increased padding */
+    padding: 30px; /* Увеличенный внутренний отступ */
     border-radius: var(--border-radius);
-    background-color: var(--white); /* White background for forms */
+    background-color: var(--white); /* Белый фон для форм */
 }
 
 .form-group {
-    margin-bottom: 20px; /* Increased margin */
+    margin-bottom: 20px; /* Увеличенный внешний отступ */
     text-align: left;
 }
 
 .form-group label {
     display: block;
-    margin-bottom: 8px; /* Increased margin */
-    color: var(--text-color); /* Darker label text */
-    font-weight: 500; /* Medium font weight */
+    margin-bottom: 8px; /* Увеличенный внешний отступ */
+    color: var(--text-color); /* Более тёмный текст метки */
+    font-weight: 500; /* Средняя жирность шрифта */
 }
 
 input[type="text"],
@@ -121,37 +121,37 @@ input[type="email"],
 input[type="password"],
 textarea {
     width: 100%;
-    padding: 12px; /* Increased padding */
+    padding: 12px; /* Увеличенный внутренний отступ */
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius);
-    font-size: 1rem; /* Consistent font size */
+    font-size: 1rem; /* Единый размер шрифта */
     box-sizing: border-box;
 }
 
-/* --- Кнопки --- */
+/* Кнопки */
 .btn {
     background-color: var(--secondary-color);
     color: var(--white);
     border: none;
     border-radius: var(--border-radius);
-    padding: 12px 25px; /* Increased padding */
-    font-size: 1rem; /* Consistent font size */
+    padding: 12px 25px; /* Увеличенный внутренний отступ */
+    font-size: 1rem; /* Единый размер шрифта */
     cursor: pointer;
     transition: var(--transition);
-    text-transform: uppercase; /* Uppercase text */
-    font-weight: 700; /* Bold font */
+    text-transform: uppercase; /* Текст в верхнем регистре */
+    font-weight: 700; /* Жирный шрифт */
 }
 
 .btn:hover {
-    background-color: #218838; /* Darker green on hover */
+    background-color: #218838; /* Более тёмный зелёный при наведении */
 }
 
-/* --- Сообщения --- */
+/* Сообщения */
 .message {
-    margin-top: 15px; /* Increased margin */
-    padding: 12px; /* Increased padding */
+    margin-top: 15px; /* Увеличенный внешний отступ */
+    padding: 12px; /* Увеличенный внутренний отступ */
     border-radius: var(--border-radius);
-    font-size: 0.9rem; /* Slightly smaller font size */
+    font-size: 0.9rem; /* Чуть меньший размер шрифта */
     text-align: left;
 }
 
@@ -167,28 +167,28 @@ textarea {
     border: 1px solid #c3e6cb;
 }
 
-/* --- Карта --- */
+/* Карта */
 #map-section h2 {
-    margin-bottom: 15px; /* Increased margin */
+    margin-bottom: 15px; /* Увеличенный внешний отступ */
 }
 
 #map-section img {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
-    margin-top: 15px; /* Increased margin */
-    box-shadow: var(--box-shadow); /* Added shadow to map */
+    margin-top: 15px; /* Увеличенный внешний отступ */
+    box-shadow: var(--box-shadow); /* Добавлена тень к карте */
 }
 
 #map-section input[type="range"] {
     width: 100%;
-    margin-top: 20px; /* Increased margin */
+    margin-top: 20px; /* Увеличенный внешний отступ */
 }
 
-/* --- События --- */
+/* События */
 .event-container {
-    margin-top: 30px; /* Increased margin */
-    padding: 20px; /* Increased padding */
+    margin-top: 30px; /* Увеличенный внешний отступ */
+    padding: 20px; /* Увеличенный внутренний отступ */
     border: 1px solid var(--border-color);
     border-radius: 5px;
     background-color: #f9f9f9;
@@ -196,114 +196,114 @@ textarea {
 }
 
 .event-container h3 {
-    margin-bottom: 15px; /* Increased margin */
+    margin-bottom: 15px; /* Увеличенный внешний отступ */
     color: var(--text-color);
 }
 
 .event-container ul {
     list-style-type: disc;
-    margin-left: 25px; /* Increased margin */
+    margin-left: 25px; /* Увеличенный внешний отступ */
 }
 
 .event-container li {
-    margin-bottom: 8px; /* Increased margin */
+    margin-bottom: 8px; /* Увеличенный внешний отступ */
     line-height: 1.5; /* Increased line height */
 }
 
-/* --- Скрытый элемент --- */
+/* Скрытый элемент */
 .hidden {
     display: none;
 }
 
-/* --- Кнопки карты --- */
+/* Кнопки карты */
 .map-buttons {
     display: flex;
     justify-content: center;
-    gap: 15px; /* Increased gap */
-    margin-top: 20px; /* Increased margin */
-    flex-wrap: wrap; /* Allow wrapping */
+    gap: 15px; 
+    margin-top: 20px; /* Увеличенный внешний отступ */
+    flex-wrap: wrap; /* Разрешить перенос строк */
 }
 
 .map-buttons .btn {
-    padding: 10px 20px; /* Adjusted padding for map buttons */
+    padding: 10px 20px; /* Отступ, адаптированный для кнопок карты */
 }
 
 
-/* --- Ссылки --- */
+/* Ссылки */
 a {
     color: var(--primary-color);
-    text-decoration: none; /* Removed underline */
-    font-weight: 500; /* Medium font weight */
+    text-decoration: none; /* Убран подчёркивающий элемент */
+    font-weight: 500; /* Средняя жирность шрифта */
 }
 
 a:hover {
-    color: #0056b3; /* Darker blue on hover */
-    text-decoration: underline; /* Add underline on hover */
+    color: #0056b3;
+    text-decoration: underline; /* Добавить подчёркивание при наведении */
 }
 
-/* --- Приветствие пользователя --- */
+/* Приветствие пользователя */
 #user-greeting {
     margin-bottom: 20px;
-    font-size: 1.1rem; /* Slightly larger font size */
+    font-size: 1.1rem; /* Чуть больший размер шрифта */
     color: var(--primary-color);
     font-weight: 500;
 }
 
-/* --- Комментарии --- */
+/* Комментарии */
 .feedback-item {
-    background-color: #e9ecef; /* Light background for comments */
-    padding: 15px; /* Increased padding */
-    margin-bottom: 15px; /* Increased margin */
+    background-color: #e9ecef; /* Светлый фон для комментариев */
+    padding: 15px; /* Увеличенный внутренний отступ */
+    margin-bottom: 15px; /* Увеличенный внешний отступ */
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
     text-align: left;
 }
 
 .feedback-username {
-    font-weight: 700; /* Bold username */
+    font-weight: 700; /* Жирное имя пользователя */
     color: var(--primary-color);
-    margin-bottom: 5px; /* Added margin */
+    margin-bottom: 5px; /* Добавлен отступ */
 }
 
 .feedback-text {
     color: var(--text-color);
-    line-height: 1.5; /* Increased line height */
+    line-height: 1.5; 
 }
 
 #feedback-display {
-    margin-top: 20px; /* Added margin */
+    margin-top: 20px; /* Добавлен отступ */
 }
 
-/* --- Модальные окна --- */
+/* Модальные окна */
 .modal {
     display: none;
     position: fixed;
-    z-index: 1000; /* Increased z-index */
+    z-index: 1000; /* Повышенный уровень слоя */
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.6); /* Darker overlay */
-    animation: fadeIn 0.3s ease-in-out; /* Added fade-in animation */
+    background-color: rgba(0, 0, 0, 0.6); /* Более тёмный фон-затемнение */
+    animation: fadeIn 0.3s ease-in-out; /* Анимация появления */
 }
 
 .modal-content {
     background-color: var(--white);
-    margin: 10% auto; /* Adjusted margin */
-    padding: 30px; /* Increased padding */
+    margin: 10% auto; /* Скорректирован отступ */
+    padding: 30px; /* Увеличенный внутренний отступ */
     border: 1px solid #888;
-    width: 90%; /* Increased width */
-    max-width: 700px; /* Added max-width */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: var(--box-shadow); /* Added shadow */
-    animation: slideInFromTop 0.3s ease-in-out; /* Added slide-in animation */
+    width: 90%; /* Увеличенная ширина */
+    max-width: 700px;
+    border-radius: 8px; /* Скруглённые углы */
+    box-shadow: var(--box-shadow); /* Тень */
+    animation: slideInFromTop 0.3s ease-in-out; /* Анимация появления сверху */
 }
 
 .close-button {
     color: #aaa;
     float: right;
-    font-size: 32px; /* Increased font size */
+    font-size: 32px;
     font-weight: bold;
     cursor: pointer;
     transition: var(--transition);
@@ -311,11 +311,11 @@ a:hover {
 
 .close-button:hover,
 .close-button:focus {
-    color: #333; /* Darker on hover */
+    color: #333; /* Темнее при наведении */
     text-decoration: none;
 }
 
-/* --- Animations --- */
+/* Анимации */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -326,7 +326,7 @@ a:hover {
     to { transform: translateY(0); opacity: 1; }
 }
 
-/* --- Legend --- */
+/* Легенда для карты */
 .legend {
     margin-top: 30px;
     padding: 20px;
@@ -350,7 +350,7 @@ a:hover {
 .legend-item {
     display: flex;
     align-items: center;
-    margin-bottom: 5px; /* Добавляет отступ между элементами, создавая столбик */
+    margin-bottom: 5px; /* Столбик для отступа между элементами */
 }
 
 .color-box {
@@ -358,7 +358,7 @@ a:hover {
     width: 15px;
     height: 15px;
     margin-right: 5px; /* Отступ между квадратом и текстом */
-    border: 1px solid #000; /* Опционально */
+    border: 1px solid #000; 
 }
 
 /* Стили для элементов карты и маркеров */
@@ -380,7 +380,7 @@ a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    /* Добавляем overflow: visible, чтобы метки могли выходить за границы контейнера */
+    /* visible чтобы метки могли выходить за границы контейнера */
     overflow: visible;
 }
 
@@ -392,7 +392,7 @@ a:hover {
     background-color: red;
     cursor: pointer;
     z-index: 10;
-    /* Используем translate для более точного центрирования и избежания проблем с margin */
+    /* translate для более точного центрирования */
     transform: translate(-50%, -50%);
 
     /* Добавляем стили для метки в центре */
@@ -448,14 +448,14 @@ a:hover {
 
 #marker-info {
     position: absolute;
-    top: 10px; /* Adjust the distance from the top as needed */
-    left: 10px; /* Adjust the distance from the left as needed */
-    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    top: 10px;
+    left: 10px;
+    background-color: rgba(255, 255, 255, 0.9); /* Белый полупрозрачный фон */
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    z-index: 100; /* Ensure it's above other elements */
-    width: 200px; /* Adjust the width as needed */
+    z-index: 100; /* Должен находиться выше других элементов */
+    width: 200px;
     text-align: left;
 }
 
